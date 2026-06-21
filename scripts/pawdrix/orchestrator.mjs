@@ -1,12 +1,13 @@
 /**
- * Pawdrix CEO System v2 — Daily 4-Agent Orchestrator
+ * Pawdrix CEO System v2 — Daily 5-Agent Orchestrator
  * Runs at 9am EST via GitHub Actions
- * Agents: CRIS (research) → SAM (content) | JUSTIN (analytics) | DAN (store fixes)
+ * Agents: CRIS (research) → SAM (content) | JUSTIN (analytics) | DAN (store fixes) | PRICE (pricing)
  */
 import { runCris } from './agents/cris.mjs';
 import { runSam, parseBlogPosts } from './agents/sam.mjs';
 import { runJustin } from './agents/justin.mjs';
 import { runDan } from './agents/dan.mjs';
+import { runPrice } from './agents/price.mjs';
 import { sendReport } from './utils/email.mjs';
 import { publishBlogPost, getDefaultBlogId } from './utils/shopify.mjs';
 
@@ -21,11 +22,12 @@ async function main() {
     timeZone: 'America/New_York',
   });
 
-  // CRIS + JUSTIN + DAN run in parallel; SAM depends on CRIS
-  const [justinResult, danResult, crisResult] = await Promise.all([
+  // CRIS + JUSTIN + DAN + PRICE run in parallel; SAM depends on CRIS
+  const [justinResult, danResult, crisResult, priceResult] = await Promise.all([
     runJustin().catch(err => ({ error: err.message })),
     runDan().catch(err => [`❌ DAN crashed: ${err.message}`]),
     runCris().catch(err => `❌ CRIS crashed: ${err.message}`),
+    runPrice().catch(err => ({ error: err.message, analysis: '', urgent: [] })),
   ]);
 
   // SAM uses CRIS output
@@ -42,8 +44,9 @@ async function main() {
 
   const elapsed = ((Date.now() - start) / 1000).toFixed(1);
 
-  const subject = `🐾 Pawdrix Daily — ${today} | Revenue: $${justinResult.todayRevenue ?? '?'} | ${justinResult.todayOrders ?? 0} orders`;
-  const html = buildEmail({ today, justinResult, danResult, crisResult, samResult, blogPublishResults, elapsed });
+  const urgentPricing = priceResult.urgent?.length ? ` | ⚠️ ${priceResult.urgent.length} pricing issues` : '';
+  const subject = `🐾 Pawdrix Daily — ${today} | Revenue: $${justinResult.todayRevenue ?? '?'} | ${justinResult.todayOrders ?? 0} orders${urgentPricing}`;
+  const html = buildEmail({ today, justinResult, danResult, crisResult, samResult, priceResult, blogPublishResults, elapsed });
 
   if (!DRY_RUN) {
     await sendReport(subject, html);
@@ -75,7 +78,7 @@ async function publishBlogs(blogOutput) {
   return results;
 }
 
-function buildEmail({ today, justinResult: j, danResult, crisResult, samResult: s, blogPublishResults, elapsed }) {
+function buildEmail({ today, justinResult: j, danResult, crisResult, samResult: s, priceResult: p, blogPublishResults, elapsed }) {
   const metric = (value, label, emoji = '') => `
     <div style="display:inline-block;background:#f0f4ff;border-radius:10px;padding:14px 22px;margin:8px;text-align:center;min-width:100px">
       <div style="font-size:26px;font-weight:700;color:#1a1a2e">${emoji} ${value}</div>
@@ -126,6 +129,12 @@ function buildEmail({ today, justinResult: j, danResult, crisResult, samResult: 
   ${section('📊 JUSTIN — Store Analytics', analyticsContent)}
   ${section('🔧 DAN — Auto-Fixes Applied Today', danContent, '#0d6e3d')}
   ${section('📝 DAN — Blog Posts Published', blogContent || '<p style="color:#888">None</p>', '#0d6e3d')}
+  ${section('💰 PRICE — Pricing Analysis', p?.error ? `<p style="color:red">Error: ${p.error}</p>` : `
+    ${p?.urgent?.length ? `<div style="background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:12px 16px;margin-bottom:12px">
+      ⚠️ <strong>${p.urgent.length} products need price attention:</strong> ${p.urgent.map(u => escHtml(u)).join(', ')}
+    </div>` : '<div style="color:#0d6e3d;margin-bottom:12px">✅ All prices look competitive</div>'}
+    ${pre(p?.analysis || '')}
+  `, '#c2410c')}
   ${section('🔍 CRIS — Today\'s 10 Winning Products', pre(String(crisResult)), '#7c3aed')}
   ${section('🎬 SAM — TikTok Ad Scripts', s.error ? `<p style="color:red">Error: ${s.error}</p>` : pre(s.adScripts), '#b45309')}
   ${section('📖 SAM — Blog Post Content', s.blogPosts ? pre(s.blogPosts) : '<p style="color:#888">None</p>', '#b45309')}
