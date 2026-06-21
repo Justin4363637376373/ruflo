@@ -1,0 +1,14 @@
+{
+  "name": "pawdrix-ceo-system",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Pawdrix automated 4-agent daily CEO system",
+  "scripts": {
+    "start": "node orchestrator.mjs",
+    "test": "node orchestrator.mjs --dry-run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "nodemailer": "^6.9.16"
+  }
+}
