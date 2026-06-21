@@ -35,7 +35,7 @@
 
 ---
 
-## Current Team Roster
+## Full Team Roster
 
 ### Cris — Clip Picker
 - Pulls Fortnite & Rocket League clips from King's Xbox captures (saved to OneDrive).
@@ -58,6 +58,7 @@
 - Decides what to post and when, using Alex's data.
 - Daily upload goal — never miss a day.
 - Always checks with Alex before scheduling.
+- Triggers Morgan (Auto-Commenter) immediately after every upload goes live.
 
 ### Alex — Data & Analytics
 - Tracks subs, views, CTR, watch time, and retention daily.
@@ -67,29 +68,78 @@
 
 ---
 
-## Missing Roles — Recommended Additions
+## NEW ROLES (Added June 21, 2026)
 
-These gaps exist in the current team and will become bottlenecks as volume scales:
+### Riley — Editor
+- **Job:** Takes Cris's picked clip and cuts it to under 10 seconds. Adds bold on-screen captions/text overlays. Syncs the cut to Sam's chosen sound. Exports upload-ready file for Dan.
+- **Why this role exists:** Cris picks, Sam finds sound — but someone has to do the actual cut and add captions. On-screen text boosts retention and watch-through rate, which is a core Shorts ranking signal.
+- **Output:** A finished .mp4 under 10 seconds, captioned, sound-synced, named for the video title.
+- **Tool suggestion:** CapCut (free, has auto-caption and text overlay, exports vertical Shorts format).
 
-### 1. Editor — *clip cutting & captions*
-- **Gap:** Cris picks clips but nobody is confirmed as the person who cuts them to <10 seconds, adds bold captions/text overlays, and exports for upload.
-- **Why critical:** YouTube Shorts with on-screen text retain viewers longer. The 9-second cut of "What do you play on?" wasn't an accident — tight edits drive completion rate.
-- **Suggested name:** Assign to an existing member or bring in a dedicated editor.
+### Taylor — Frame Designer (Cover Frame & Thumbnail)
+- **Job:** After Riley exports the final cut, Taylor scrubs through and picks the single best freeze frame — the most visually striking moment. Slaps bold white text on it matching the video title. Sets it as the YouTube cover frame before Dan uploads.
+- **Why this role exists:** The cover frame is the first hook in browse and suggested feeds. A weak frame kills CTR before the algorithm ever tests the video. One person needs to own this every single upload.
+- **Output:** A 1080x1920 cover frame image with bold title text overlaid, uploaded to YouTube Studio as the custom thumbnail.
+- **Tool suggestion:** CapCut or Canva — both can export vertical 9:16 frames with text in under 2 minutes.
 
-### 2. Thumbnail/Cover Frame Designer — *still needed even for Shorts*
-- **Gap:** Nobody owns the cover frame (the static image YouTube shows before a Short plays in feed).
-- **Why critical:** Cover frame is the first hook in browse/suggested. A bad frame tanks CTR before the algorithm ever tests the video.
-- Responsibility: Pick the single best frame from the clip and apply a bold text overlay matching the title.
+### Morgan — Auto-Commenter (Comment Worker)
+- **Job:** The moment Dan confirms a video is live, Morgan posts the first comment on the video within 5 minutes. Comment is written to bait debate and replies. Morgan pins it and replies to the top early comments to seed the thread.
+- **Why this role exists:** YouTube's algorithm treats early comment engagement as a strong positive signal. The channel that asks "What do you play on?" needs to be the first voice in its own comments pushing the debate.
+- **How it works:**
+  - Dan notifies Morgan with the live video link immediately after upload.
+  - Morgan posts a comment within **5 minutes** of going live.
+  - Morgan **pins** that comment.
+  - Morgan replies to the top 3–5 early comments to seed the debate thread.
+- **Comment templates by video type:**
 
-### 3. Community Manager — *comment response & pinned comment*
-- **Gap:** Nobody is assigned to reply to comments, especially on viral videos.
-- **Why critical:** YouTube's algorithm boosts videos with high comment engagement. On "What do you play on?" (20K+ views), every unanswered debate comment is a missed algorithm signal. A pinned comment asking "Comment below — console or PC?" amplifies the debate loop.
-- **Suggested owner:** King or Sam (Sam already monitors comments for sound trends anyway).
+  | Video type | Pinned comment to post |
+  |-----------|-----------------|
+  | Console vs PC debate | "Drop your setup below 👇 console or PC?" |
+  | Funny fail clip | "This actually happened 💀 who's had worse?" |
+  | Skill clip | "Rate this out of 10 👇" |
+  | Generic Fortnite | "What do YOU play on? Comment below ⬇️" |
 
-### 4. Paid Ads Manager — *if budget is allocated*
-- **Gap:** King is exploring Higgsfield for ads and considering paid YouTube promotion, but no owner is assigned.
-- **Recommendation:** Run paid views behind "What do you play on?" — it already converts at ~170 subs per 20K views (0.8% sub rate), which is high for Shorts. Budget behind a proven converter, not untested content.
-- **Decision needed:** Paid YouTube ads vs. channel trailer vs. promo clips — King to decide.
+- **Rule:** Never post a generic comment. It must match the video's debate hook.
+
+---
+
+## Roles We Still Don't Have (Recommended)
+
+After Riley, Taylor, and Morgan, here's what's still missing:
+
+### 1. Collab / Shoutout Outreach Person
+- Nobody is finding other small Fortnite channels (5K–50K subs) for shoutout swaps.
+- A swap with a 10K-sub Fortnite channel can deliver hundreds of real subs overnight at zero cost.
+- At 200 subs you can punch above your weight by targeting channels also growing fast.
+- Could be King personally, or assign to Alex who already watches the landscape.
+
+### 2. Trend Spotter / Topic Researcher
+- Sam finds sounds but nobody is watching what Fortnite topics and moments are trending RIGHT NOW on YouTube.
+- If a big streamer moment drops or a new mechanic goes viral, the channel that posts a related Short first wins the wave. Being 48 hours late means starting from zero.
+- Could be Sam's role expanded, or a dedicated person watching Fortnite subreddits, Twitter/X, and YouTube trending daily.
+
+### 3. Paid Ads Manager (if King allocates budget)
+- King is exploring ads but nobody owns campaign setup, targeting, or budget management.
+- Recommend running paid promotion behind "What do you play on?" — already proven at ~0.8% sub conversion. Don't spend on untested videos.
+- **Decision needed from King:** Paid YouTube ads vs. channel trailer vs. promo clips via Higgsfield.
+
+---
+
+## Complete Team (Current + New)
+
+| Name | Role | Status |
+|------|------|--------|
+| Cris | Clip Picker | Active — OneDrive bridge pending |
+| Sam | Viral Sound Hunter | Active |
+| Justin | SEO & Hashtags | Active |
+| Dan | Scheduling & Upload | Active |
+| Alex | Data & Analytics | Active |
+| **Riley** | **Editor (cut + captions + sound sync)** | **NEW — assign now** |
+| **Taylor** | **Frame Designer (cover frame + bold text)** | **NEW — assign now** |
+| **Morgan** | **Auto-Commenter (pins comment within 5 min of upload)** | **NEW — assign now** |
+| TBD | Collab / Shoutout Outreach | Recommended |
+| TBD | Trend Spotter | Recommended |
+| TBD | Paid Ads Manager | If budget approved |
 
 ---
 
@@ -97,12 +147,14 @@ These gaps exist in the current team and will become bottlenecks as volume scale
 
 | Priority | Item | Owner | Status |
 |----------|------|-------|--------|
+| 🔴 High | Post King's Fortnite funny clip (full pipeline) | Sam → Riley → Taylor → Dan → Morgan | In progress |
+| 🔴 High | Assign Riley (Editor) | King | Open |
+| 🔴 High | Assign Taylor (Frame Designer) | King | Open |
 | 🔴 High | Solve OneDrive → Google Drive clip flow | Cris | Blocked |
-| 🔴 High | Post King's Fortnite funny clip (sound selected by Sam) | Sam → Dan | In progress |
-| 🟡 Med | Assign Editor role for cutting & captions | King | Open |
-| 🟡 Med | Assign cover frame owner | King | Open |
+| 🟡 Med | Assign Morgan (Auto-Commenter) | King | Open |
 | 🟡 Med | Decide on paid ads strategy | King | Open |
-| 🟢 Low | Assign Community Manager role | King | Open |
+| 🟢 Low | Add Collab Outreach role | King | Recommended |
+| 🟢 Low | Add Trend Spotter role | King | Recommended |
 
 ---
 
@@ -114,21 +166,7 @@ These gaps exist in the current team and will become bottlenecks as volume scale
 - **Fortnite first** — it's the only content proven to convert subs
 - **Question-style titles** — proven format, stick to it
 - **Daily uploads** — algorithm rewards consistency
-
----
-
-## What's Set Up
-
-- [x] Google Drive folder "Cris Picks" created (`1Rial8V0ucy45DLaNf36b2Z6q9flpEZsg`)
-- [x] YouTube analytics data uploaded and analyzed (May 20 – Jun 16, 2026)
-- [x] Team roles defined: Cris, Sam, Justin, Dan, Alex
-- [x] Sam scoped to YouTube Shorts sounds only
-- [x] Justin scoped to YouTube-only hashtags
-- [ ] OneDrive bridge for Cris
-- [ ] Editor role filled
-- [ ] Cover frame owner assigned
-- [ ] Paid ads decision made
-- [ ] Community Manager assigned
+- **Morgan comments within 5 minutes** of every upload going live
 
 ---
 
@@ -140,16 +178,10 @@ Alex reviews yesterday's data
         └─► Dan schedules today's upload
               └─► Cris confirms clip is in "Cris Picks"
                     └─► Sam confirms sound match
-                          └─► Justin writes title + description + hashtags
-                                └─► Editor cuts to <10s + adds caption
-                                      └─► Dan uploads via YouTube Studio
-                                            └─► Community Manager pins debate comment
+                          └─► Riley cuts to <10s + captions + sound sync
+                                └─► Taylor picks cover frame + adds bold text
+                                      └─► Justin writes title + description + hashtags
+                                            └─► Dan uploads via YouTube Studio
+                                                  └─► Morgan pins comment within 5 min
+                                                        └─► Morgan replies to top early comments
 ```
-
----
-
-## Notes for Next Session
-
-- The fastest path to 100K is scaling what already works: more Fortnite question-style clips, daily cadence, and optionally budget behind "What do you play on?"
-- Rocket League can stay on the schedule but should not consume Fortnite clip slots.
-- Every new upload should follow the formula: question title → debate hook → <10 seconds → Fortnite.
