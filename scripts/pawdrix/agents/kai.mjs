@@ -73,7 +73,7 @@ The single highest-ROI thing Pawdrix should post or do TODAY on social media (sp
   const report = await ask(prompt, system, 'claude-haiku-4-5-20251001');
 
   // Extract the action item
-  const actionMatch = report.match(/=== TODAY'S ACTION ITEM ===([\.\s\S]*?)(?:===|$)/);
+  const actionMatch = report.match(/=== TODAY'S ACTION ITEM ===([\s\S]*?)(?:===|$)/);
   const todayAction = actionMatch ? actionMatch[1].trim() : '';
 
   console.log('✅ KAI: Influencer strategy ready');
