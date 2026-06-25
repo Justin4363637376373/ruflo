@@ -1,6 +1,6 @@
 # VyroFlow — CEO Briefing & Full Handoff
 
-> Last updated: June 21, 2026  
+> Last updated: June 25, 2026  
 > Channel: [@Vyro_Flow](https://youtube.com/@Vyro_Flow) — **YouTube ONLY**
 
 ---
@@ -9,98 +9,113 @@
 
 | Metric | Value |
 |--------|-------|
-| Subscribers | 210 |
-| Videos posted | 10 |
-| Views (last 28 days) | 36,700 |
+| Subscribers | 231 |
+| Videos posted | 13 |
+| Views (May 28 – Jun 25) | 41,059 |
 | Goal | 100,000 subs |
-| Deadline | August 16, 2026 (60 days from June 17) |
-| Subs needed per day | ~1,694 |
+| Deadline | August 16, 2026 |
+| 7-Day Target | 331 subs by July 2 |
 
 ---
 
 ## The Proven Viral Formula
 
-**Best video:** *"What do you play on?"* — 20,879 views, 170 subs, 9 seconds, Fortnite, question-style title.
+**Best video:** *"What do you play on?"* — 20,885 views, 170 subs, 9 seconds, Fortnite, question-style title.
 
 - Fortnite + question-style title + **under 10 seconds** = winner
-- Fortnite drives subscribers. Rocket League gets views but near-zero sub conversions.
+- Fortnite drives subscribers. Rocket League = views but near-zero subs. Stop posting RL.
 - Question titles that spark debate outperform everything else.
+- "DO ALL" (like + comment + sub) assigned to biggest platform group in comments
 - Max 6 hashtags, no filler.
 - Daily uploads. Never let momentum go cold.
+- Post at **10:00 AM** daily (summer schedule — algorithm finishes testing by noon scroll wave)
 
-### Content Schedule
-- **6 days/week** — Fortnite question-style clips
-- **1 day/week** — Rocket League (views only, not for sub growth)
+### Proven Hashtags (use every time)
+`#fortnite #fortniteclips #gaming #fortniteshorts #shorts`
 
 ---
 
 ## Full Team Roster
 
 ### Cris — On-Screen Hook Text
-- When King sends a clip and describes what happens, Cris writes exactly what text to put on screen and when it should appear.
-- Goal: make people stop scrolling, get curious, and watch all the way through — completion rate = algorithm boost.
-- Cris does NOT edit the video. King handles the editing. Cris just delivers the text brief.
-- **Output format Cris delivers:**
-  - Timestamp + what text to show + style note
-  - Example: "0:00 — 'wait for it…' (white bold, top of screen) → 0:06 — 'NO WAY 😭' (big, center screen)"
+- Writes exactly what text to put on screen and when it should appear.
+- Goal: stop the scroll, drive completion rate.
+- Does NOT edit the video — delivers the text brief only.
+- **Output format:** Timestamp + text + style note
+  - Example: "0:00 — '1 HP…' (white bold, top) → 0:04 — 'bro said not today 😤' → 0:07 — 'HOW 🤯' (big, center)"
 
-**Hook text by clip type:**
-
-| Clip type | On-screen text |
-|-----------|---------------|
-| Unexpected fail | "wait for it…" → "NO WAY 😭" |
-| Duo/couple moment | "she saw everything 💀" |
-| Snipe/elimination | "didn't even see it coming 💀" |
-| Clutch play | "wait until the end" → "HOW 🤯" |
-| Debate moment | "would YOU do this?" |
-| Funny moment | "bro got cooked 💀" |
-
-### Justin — Description Caption + Hashtags
-**Job 1 — Description caption:**
-- Writes 1-2 punchy lines under the video that match the energy and make people comment.
-- Examples for a duo snipe clip:
-  - "She watched me get cooked in real time 💀 duo goals right?"
-  - "Was trying to impress her… that did not go as planned 😭"
-
-**Job 2 — Hashtags:**
-- Picks exactly 6 hashtags based on the clip. Checks which tags are on blowing-up Shorts that week.
-- **Fortnite funny/duo/fail:** `#fortnite #fortnitefunny #fortniteclips #fortnitefunnymoments #fortniteshorts #shorts`
-- **Fortnite debate/question:** `#fortnite #fortniteclips #fortniteshorts #gaming #fortnitefunny #shorts`
-- **Rocket League:** `#rocketleague #rocketleagueclips #rlchamp #shorts #gaming #rl`
-- **Hard rule: Max 6. No exceptions.**
+### Sam — Hook Doctor
+- When King describes what the short is about, Sam decides the hook — the exact words/concept for the first 2 seconds.
+- Sam thinks it up → Cris formats it on screen. Clean handoff.
+- Goal: if the hook doesn't land in 2 seconds, they swipe. Sam prevents that.
 
 ### Max — Title Writer
 - Writes 3 question-style title options for every clip. King picks one.
-- All titles spark debate or make people want to comment or tag someone.
-- Under 6 words when possible.
-- Examples: "She watched me get sniped 💀" / "My girl saw everything 😭" / "Would you have survived this?"
+- All titles under 6 words when possible. Always a question or reaction-starter.
+- Examples: "How did I survive this? 💀" / "What do you play on?" / "When did you start playing?"
+
+### Justin — Description Caption + Hashtags
+**Job 1 — Caption:** 1-2 punchy lines that match the energy and make people comment.
+**Job 2 — Hashtags:** Always `#fortnite #fortniteclips #gaming #fortniteshorts #shorts`
+- Hard rule: Max 6. No exceptions.
 
 ### Dan — Scheduling & Upload
-- Uses Alex's data to decide when to post. Daily upload — never miss a day.
+- Post daily at **10:00 AM** (summer schedule).
+- Uses Alex's data to decide exact timing.
+- Never miss a day — June 20 dropped to 25 views from a gap.
 
 ### Alex — Data & Analytics
-- Tracks subs, views, CTR, watch time, retention daily.
-- Feeds Dan before every scheduling decision. Source of truth for all decisions.
+- Tracks subs, views, CTR, watch time, completion rate daily.
+- Feeds Dan before every scheduling decision.
+- Runs full analytics report on demand (King types "report").
+
+### John — Series Planner
+- Maps out the week of content so King never wakes up not knowing what to post.
+- Plans 7 days at a time based on what's working and what's trending.
+
+### Cam — Comment Strategist
+- Tells King which comments to reply to and pin in the first hour after upload.
+- First-hour engagement signals to YouTube that the video sparks conversation = more push.
+- Identifies comment wars to let run (platform debates, Xbox vs PS etc).
 
 ### Nova — Trend Spotter
 - Every morning checks what Fortnite topics are blowing up in the last 24 hours.
-- Sends King a 3-bullet trend report daily by 9am.
-- Flags anything trending under 24 hours as URGENT.
-- Skips anything 4+ days old — too saturated.
+- Sends King a 3-bullet trend report.
+- Flags anything under 24 hours as URGENT. Skips anything 4+ days old.
 
 ---
 
 ## When King Sends a Clip
 
 ```
-King uploads clip + describes what happens
-  └─► Cris — writes on-screen hook text brief (what to put + when)
-        └─► Max — writes 3 title options → King picks one
-              └─► King edits the clip using Cris's text brief
-                    └─► Justin — writes description caption + 6 hashtags
-                          └─► Dan — uploads via YouTube Studio
-                                └─► Alex — logs performance next day
+King describes the clip
+  └─► Sam — decides the hook concept (first 2 seconds)
+        └─► Cris — formats hook text brief (what to put on screen + when)
+              └─► Max — writes 3 title options → King picks one
+                    └─► King edits the clip using Cris's text brief
+                          └─► Justin — writes caption + 6 hashtags
+                                └─► Dan — uploads at 10 AM via YouTube Studio
+                                      └─► Cam — monitors comments first hour
+                                            └─► Alex — logs performance next day
 ```
+
+---
+
+## Active Series: Platform Skin Series
+
+Each video = same Fortnite play, different skin matching the platform, question title, platform actions on screen.
+
+| Platform | Action |
+|---|---|
+| Xbox | DO ALL (like + comment + sub) |
+| PlayStation | SUB |
+| PC | LIKE |
+| Switch | COMMENT |
+| Mobile | COMMENT |
+
+**Title every time:** `What do you play on? #fortnite #fortniteclips #gaming`
+**Caption every time:** `Drop it below ⬇️`
+**Tags:** `#fortnite #fortniteclips #gaming #fortniteshorts #shorts`
 
 ---
 
@@ -108,10 +123,10 @@ King uploads clip + describes what happens
 
 | Item | Decision |
 |------|----------|
-| Sam (Sound Hunter) | Removed |
 | Old Cris (Clip Picker) | Removed |
 | Taylor (Frame Designer) | Removed |
 | Morgan (Auto-Commenter) | Removed |
+| Rocket League uploads | STOPPED — zero sub conversion |
 | Paid Ads | Not doing |
 | Collab Outreach | Not doing |
 
@@ -120,9 +135,10 @@ King uploads clip + describes what happens
 ## Key Rules
 
 - **YouTube ONLY** — never TikTok, never cross-posting
+- **Fortnite ONLY** — no more Rocket League until 1K
 - **Max 6 hashtags** — no exceptions
-- **Shorts under 10 seconds** when possible
-- **Fortnite 6 days/week, RL max 1x/week**
+- **Shorts under 10 seconds** when possible — 9 seconds is the sweet spot
 - **Question-style titles** — Max writes 3, King picks one
-- **Cris always delivers hook text** — never upload a clip with no on-screen text
-- **Daily uploads** — never break the streak
+- **Sam → Cris handoff** — Sam calls the hook, Cris places it
+- **Daily uploads at 10 AM** — never break the streak
+- **Cam on comments** — reply to top comments within first hour
