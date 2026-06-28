@@ -1,7 +1,7 @@
 /**
- * Pawdrix CEO System v3 — Daily 9-Agent Orchestrator
+ * Pawdrix CEO System v3 — Daily 10-Agent Orchestrator
  * Runs at 9am EST via GitHub Actions
- * Agents: CRIS → SAM | JUSTIN | DAN | PRICE | MAYA | KAI | REX | LUNA
+ * Agents: CRIS → SAM | JUSTIN | DAN | PRICE | MAYA | KAI | REX | LUNA | NOVA
  */
 import { runCris } from './agents/cris.mjs';
 import { runSam, parseBlogPosts } from './agents/sam.mjs';
@@ -12,6 +12,7 @@ import { runMaya } from './agents/maya.mjs';
 import { runKai } from './agents/kai.mjs';
 import { runRex } from './agents/rex.mjs';
 import { runLuna } from './agents/luna.mjs';
+import { runNova } from './agents/nova.mjs';
 import { sendReport } from './utils/email.mjs';
 import { publishBlogPost, getDefaultBlogId } from './utils/shopify.mjs';
 
@@ -27,7 +28,7 @@ async function main() {
   });
 
   // All agents run in parallel; SAM depends on CRIS
-  const [justinResult, danResult, crisResult, priceResult, mayaResult, kaiResult, rexResult, lunaResult] = await Promise.all([
+  const [justinResult, danResult, crisResult, priceResult, mayaResult, kaiResult, rexResult, lunaResult, novaResult] = await Promise.all([
     runJustin().catch(err => ({ error: err.message })),
     runDan().catch(err => [`❌ DAN crashed: ${err.message}`]),
     runCris().catch(err => `❌ CRIS crashed: ${err.message}`),
@@ -36,6 +37,7 @@ async function main() {
     runKai().catch(err => ({ error: err.message, report: '', todayAction: '' })),
     runRex().catch(err => ({ error: err.message, zeroReviewProducts: [], reviewStrategy: '' })),
     runLuna().catch(err => ({ error: err.message, contentCalendar: '' })),
+    runNova().catch(err => ({ error: err.message, diagnosis: '', productsNoImage: [] })),
   ]);
 
   // SAM uses CRIS output
@@ -54,7 +56,7 @@ async function main() {
 
   const urgentPricing = priceResult.urgent?.length ? ` | ⚠️ ${priceResult.urgent.length} pricing issues` : '';
   const subject = `🐾 Pawdrix Daily — ${today} | Revenue: $${justinResult.todayRevenue ?? '?'} | ${justinResult.todayOrders ?? 0} orders${urgentPricing}`;
-  const html = buildEmail({ today, justinResult, danResult, crisResult, samResult, priceResult, mayaResult, kaiResult, rexResult, lunaResult, blogPublishResults, elapsed });
+  const html = buildEmail({ today, justinResult, danResult, crisResult, samResult, priceResult, mayaResult, kaiResult, rexResult, lunaResult, novaResult, blogPublishResults, elapsed });
 
   if (!DRY_RUN) {
     await sendReport(subject, html);
@@ -86,7 +88,7 @@ async function publishBlogs(blogOutput) {
   return results;
 }
 
-function buildEmail({ today, justinResult: j, danResult, crisResult, samResult: s, priceResult: p, mayaResult: m, kaiResult: k, rexResult: r, lunaResult: l, blogPublishResults, elapsed }) {
+function buildEmail({ today, justinResult: j, danResult, crisResult, samResult: s, priceResult: p, mayaResult: m, kaiResult: k, rexResult: r, lunaResult: l, novaResult: n, blogPublishResults, elapsed }) {
   const metric = (value, label, emoji = '') => `
     <div style="display:inline-block;background:#f0f4ff;border-radius:10px;padding:14px 22px;margin:8px;text-align:center;min-width:100px">
       <div style="font-size:26px;font-weight:700;color:#1a1a2e">${emoji} ${value}</div>
@@ -147,10 +149,17 @@ function buildEmail({ today, justinResult: j, danResult, crisResult, samResult: 
 
   <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;padding:28px;border-radius:12px 12px 0 0">
     <h1 style="margin:0;font-size:22px">🐾 Pawdrix CEO Daily Report</h1>
-    <p style="margin:8px 0 0;opacity:.8;font-size:14px">${today} &nbsp;·&nbsp; 9 Agents Active</p>
+    <p style="margin:8px 0 0;opacity:.8;font-size:14px">${today} &nbsp;·&nbsp; 10 Agents Active</p>
   </div>
 
   ${section('📊 JUSTIN — Store Analytics', analyticsContent)}
+  ${section('🎯 NOVA — Conversion Optimizer', n?.error ? `<p style="color:red">Error: ${n.error}</p>` : `
+    ${n.productsNoImage?.length ? `<div style="background:#fff0f0;border:1px solid #fca5a5;border-radius:8px;padding:12px 16px;margin-bottom:12px">
+      🚨 <strong>${n.productsNoImage.length} products have NO image (instant trust killer):</strong> ${n.productsNoImage.slice(0, 8).map(x => escHtml(x)).join(', ')}
+    </div>` : ''}
+    <div style="color:#666;font-size:13px;margin-bottom:10px">Last 7 days: ${n.weekOrders ?? 0} orders · $${n.weekRevenue ?? '0.00'} revenue</div>
+    ${pre(n.diagnosis || '')}
+  `, '#dc2626')}
   ${section('🔧 DAN — Auto-Fixes Applied Today', danContent, '#0d6e3d')}
   ${section('📝 DAN — Blog Posts Published', blogContent || '<p style="color:#888">None</p>', '#0d6e3d')}
   ${section('💰 PRICE — Pricing Analysis', p?.error ? `<p style="color:red">Error: ${p.error}</p>` : `
@@ -179,7 +188,7 @@ function buildEmail({ today, justinResult: j, danResult, crisResult, samResult: 
   ${section('📖 SAM — Blog Post Content', s.blogPosts ? pre(s.blogPosts) : '<p style="color:#888">None</p>', '#b45309')}
 
   <div style="background:#1a1a2e;color:#aaa;padding:16px 28px;border-radius:0 0 12px 12px;font-size:12px;text-align:center">
-    Pawdrix CEO System &nbsp;·&nbsp; 9 Agents: JUSTIN · DAN · CRIS · SAM · PRICE · MAYA · KAI · REX · LUNA &nbsp;·&nbsp; ${elapsed}s &nbsp;·&nbsp; 9am EST
+    Pawdrix CEO System &nbsp;·&nbsp; 10 Agents: JUSTIN · DAN · CRIS · SAM · PRICE · MAYA · KAI · REX · LUNA · NOVA &nbsp;·&nbsp; ${elapsed}s &nbsp;·&nbsp; 9am EST
     <br>Store: <a href="https://pawdrix.com" style="color:#6b9fff">pawdrix.com</a>
     &nbsp;·&nbsp; Admin: <a href="https://admin.shopify.com" style="color:#6b9fff">Shopify Admin</a>
   </div>
