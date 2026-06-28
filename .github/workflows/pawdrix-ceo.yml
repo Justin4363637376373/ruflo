@@ -14,7 +14,7 @@ on:
 
 jobs:
   daily-report:
-    name: Run 4-Agent CEO System
+    name: Run 7-Agent CEO System
     runs-on: ubuntu-latest
     timeout-minutes: 15
 

@@ -55,12 +55,12 @@ async function fixInventoryPolicy() {
     for (const { node: variant } of product.variants.edges) {
       if (variant.inventoryPolicy === 'CONTINUE') continue;
       await shopifyGQL(`
-        mutation {
-          productVariantUpdate(id: "${variant.id}", input: { inventoryPolicy: CONTINUE }) {
+        mutation UpdateVariantPolicy($id: ID!) {
+          productVariantUpdate(id: $id, input: { inventoryPolicy: CONTINUE }) {
             userErrors { field message }
           }
         }
-      `);
+      `, { id: variant.id });
     }
     fixes.push(`✅ Inventory → CONTINUE: "${product.title}"`);
   }
@@ -151,12 +151,12 @@ async function publishReadyDrafts() {
 
     if (hasImage && hasDesc && hasPrice) {
       await shopifyGQL(`
-        mutation {
-          productUpdate(id: "${p.id}", input: { status: ACTIVE }) {
+        mutation PublishDraft($id: ID!) {
+          productUpdate(id: $id, input: { status: ACTIVE }) {
             userErrors { field message }
           }
         }
-      `);
+      `, { id: p.id });
       fixes.push(`🚀 Published draft: "${p.title}" @ $${price}`);
     } else {
       const missing = [

@@ -1,8 +1,8 @@
 {
   "name": "pawdrix-ceo-system",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "type": "module",
-  "description": "Pawdrix automated 4-agent daily CEO system",
+  "description": "Pawdrix automated 7-agent daily CEO system",
   "scripts": {
     "start": "node orchestrator.mjs",
     "test": "node orchestrator.mjs --dry-run"

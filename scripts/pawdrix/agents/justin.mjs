@@ -18,8 +18,8 @@ export async function runJustin() {
   const yesterdayISO = yesterdayStart.toISOString();
 
   const query = `
-    query DailyStats {
-      todayOrders: orders(first: 250, query: "created_at:>=${todayISO}") {
+    query DailyStats($todayQuery: String!, $yesterdayQuery: String!) {
+      todayOrders: orders(first: 250, query: $todayQuery) {
         edges {
           node {
             totalPriceSet { shopMoney { amount } }
@@ -30,7 +30,7 @@ export async function runJustin() {
           }
         }
       }
-      yesterdayOrders: orders(first: 250, query: "created_at:>=${yesterdayISO} created_at:<${todayISO}") {
+      yesterdayOrders: orders(first: 250, query: $yesterdayQuery) {
         edges {
           node {
             totalPriceSet { shopMoney { amount } }
@@ -49,7 +49,10 @@ export async function runJustin() {
     }
   `;
 
-  const data = await shopifyGQL(query);
+  const data = await shopifyGQL(query, {
+    todayQuery: `created_at:>=${todayISO}`,
+    yesterdayQuery: `created_at:>=${yesterdayISO} created_at:<${todayISO}`,
+  });
 
   const calcStats = (orders) => {
     const paid = orders.edges.filter(e => e.node.financialStatus === 'PAID');
